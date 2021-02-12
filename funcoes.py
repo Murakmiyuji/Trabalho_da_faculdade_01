@@ -2,51 +2,285 @@ import math
 import numpy as np
 import turtle
 
+"""
+INICIADO: 10/02/2021.
+FINALIZADO: 12/02/2021.
+DESENVOLVIDO POR: YUJI FARUK MURAKAMI FELES.
+Neste modulo encontra-se as funções pertinentes para elaboração do programa principal.
+Funções como: criar_arquivo_txt; desenhar_triangulo; separador_de_str_2elementos; separador_de_str_3elementos; 
+    ler_arquivo_txt;
+Enjoy! :)
+"""
 
 def criar_arquivo_txt(arquivo):
 
     with open(arquivo, 'w') as f:
 
-        #Triângulo Retângulo
-        coordx = str(input("Valor da coordenada x: "))
-        coordy = str(input("Valor da coordenada y: "))
+        #Primeira coordenada do Triângulo Retângulo
+        while True:
 
-        cateto1 = str(input("Valor do primeiro cateto: "))
-        cateto2 = str(input("Valor do segundo cateto: "))
+            try:
+                coordx = float(input("Valor da coordenada x: "))
 
-        #Ponto A
-        ponto1x = str(input("Valor da coordenada x do ponto A: "))
-        ponto1y = str(input("valor da coordenada y do ponto A: "))
+            except ValueError:
+                print('\033[31mErro no tipo de informação inserida. Lembre-se somente do tipo float\033[m')
 
-        cor1 = str(input("Cor em inglês do ponto A: "))
+            except TypeError:
+                print('\033[31mErro no tipo de informação inserida. Lembre-se somente do tipo float\033[m')
+            else:
+                print('\033[34mOk! Foi adicionado o valor.\033[m')
+                break
 
-        #Ponto B
-        ponto2x = str(input("Valor da coordenada x do ponto B: "))
-        ponto2y = str(input("valor da coordenada y do ponto B: "))
+        #Segunda coordenada do Triangulo Retângulo
+        while True:
 
-        cor2 = str(input("Cor em inglês do ponto B: "))
+            try:
+                coordy = float(input("Valor da coordenada y: "))
 
-        #Ponto C
-        ponto3x = str(input("Valor da coordenada x do ponto C: "))
-        ponto3y = str(input("valor da coordenada y do ponto C: "))
+            except ValueError:
+                print('\033[31mErro no tipo de informação inserida. Lembre-se somente do tipo float\033[m')
 
-        cor3 = str(input("Cor em inglês do ponto C: "))
+            except TypeError:
+                print('\033[31mErro no tipo de informação inserida. Lembre-se somente do tipo float\033[m')
 
-        #Ponto D
-        ponto4x = str(input("Valor da coordenada x do ponto D: "))
-        ponto4y = str(input("valor da coordenada y do ponto D: "))
+            else:
+                print('\033[34mOk! Foi adicionado o valor.\033[m')
+                break
 
-        cor4 = str(input("Cor em inglês do ponto D: "))
+        #Primeiro cateto do triangulo retângulo
+        while True:
 
-        primeira_linha = coordx + ' ' + coordy
-        quarta_linha = ponto1x + ' ' + ponto1y + ' ' + cor1 + ' '
-        quinta_linha = ponto2x + ' ' + ponto2y + ' ' + cor2 + ' '
-        sexta_linha = ponto3x + ' ' + ponto3y + ' ' + cor3 + ' '
-        setima_linha = ponto4x + ' ' + ponto4y + ' ' + cor4 + ' '
+            try:
+                cateto1 = float(input("Valor do primeiro cateto: "))
 
+            except ValueError:
+                print('\033[31mErro no tipo de informação inserida. Lembre-se somente do tipo float\033[m')
+
+            except TypeError:
+                print('\033[31mErro no tipo de informação inserida. Lembre-se somente do tipo float\033[m')
+
+            else:
+                print('\033[34mOk! Foi adicionado o valor.\033[m')
+                break
+
+        #Segundo cateto do Triangulo Retângulo
+        while True:
+
+            try:
+                cateto2 = float(input("Valor do segundo cateto: "))
+
+            except ValueError:
+                print('\033[31mErro no tipo de informação inserida. Lembre-se somente do tipo float\033[m')
+
+            except TypeError:
+                print('\033[31mErro no tipo de informação inserida. Lembre-se somente do tipo float\033[m')
+
+            else:
+                print('\033[34mOk! Foi adicionado o valor.\033[m')
+                break
+
+        #Ponto A, coordenada x
+        while True:
+
+            try:
+                ponto1x = float(input("Valor da coordenada x do ponto A: "))
+
+            except ValueError:
+                print('\033[31mErro no tipo de informação inserida. Lembre-se somente do tipo float\033[m')
+
+            except TypeError:
+                print('\033[31mErro no tipo de informação inserida. Lembre-se somente do tipo float\033[m')
+
+            else:
+                print('\033[34mOk! Foi adicionado o valor.\033[m')
+                break
+
+        #Ponto 1, coordenada y
+        while True:
+
+            try:
+                ponto1y = float(input("valor da coordenada y do ponto A: "))
+
+            except ValueError:
+                print('\033[31mErro no tipo de informação inserida. Lembre-se somente do tipo float\033[m')
+
+            except TypeError:
+                print('\033[31mErro no tipo de informação inserida. Lembre-se somente do tipo float\033[m')
+
+            else:
+                print('\033[34mOk! Foi adicionado o valor.\033[m')
+                break
+
+        #Cor do ponto 1
+        while True:
+
+            try:
+                cor1 = str(input("Cor em inglês do ponto A: "))
+
+            except ValueError:
+                print('\033[31mErro no tipo de informação inserida. Lembre-se somente do tipo string\033[m')
+
+            except TypeError:
+                print('\033[31mErro no tipo de informação inserida. Lembre-se somente do tipo string\033[m')
+
+            else:
+                print('\033[34mOk! Foi adicionado o valor.\033[m')
+                break
+
+        #Ponto B, coordenada x
+        while True:
+
+            try:
+                ponto2x = float(input("Valor da coordenada x do ponto B: "))
+
+            except ValueError:
+                print('\033[31mErro no tipo de informação inserida. Lembre-se somente do tipo float\033[m')
+
+            except TypeError:
+                print('\033[31mErro no tipo de informação inserida. Lembre-se somente do tipo float\033[m')
+
+            else:
+                print('\033[34mOk! Foi adicionado o valor.\033[m')
+                break
+
+        #Ponto B, coordenada y
+        while True:
+
+            try:
+               ponto2y = float(input("valor da coordenada y do ponto B: "))
+
+            except ValueError:
+               print('\033[31mErro no tipo de informação inserida. Lembre-se somente do tipo float\033[m')
+
+            except TypeError:
+                print('\033[31mErro no tipo de informação inserida. Lembre-se somente do tipo float\033[m')
+
+            else:
+                print('\033[34mOk! Foi adicionado o valor.\033[m')
+                break
+
+        #Cor do ponto B
+        while True:
+
+            try:
+                cor2 = str(input("Cor em inglês do ponto B: "))
+
+            except ValueError:
+                print('\033[31mErro no tipo de informação inserida. Lembre-se somente do tipo string\033[m')
+
+            except TypeError:
+                print('\033[31mErro no tipo de informação inserida. Lembre-se somente do tipo string\033[m')
+
+            else:
+                print('\033[34mOk! Foi adicionado o valor.\033[m')
+                break
+
+        #Ponto C, coordenada x
+        while True:
+
+            try:
+                ponto3x = float(input("Valor da coordenada x do ponto C: "))
+
+            except ValueError:
+                print('\033[31mErro no tipo de informação inserida. Lembre-se somente do tipo float\033[m')
+
+            except TypeError:
+                print('\033[31mErro no tipo de informação inserida. Lembre-se somente do tipo float\033[m')
+
+            else:
+                print('\033[34mOk! Foi adicionado o valor.\033[m')
+                break
+
+        #Ponto C, coordenada y
+        while True:
+
+            try:
+                ponto3y = float(input("valor da coordenada y do ponto C: "))
+
+            except ValueError:
+                 print('\033[31mErro no tipo de informação inserida. Lembre-se somente do tipo float\033[m')
+
+            except TypeError:
+                print('\033[31mErro no tipo de informação inserida. Lembre-se somente do tipo float\033[m')
+
+            else:
+                print('\033[34mOk! Foi adicionado o valor.\033[m')
+                break
+
+        #Cor do ponto C
+        while True:
+
+            try:
+                cor3 = str(input("Cor em inglês do ponto C: "))
+
+            except ValueError:
+                print('\033[31mErro no tipo de informação inserida. Lembre-se somente do tipo string\033[m')
+
+            except TypeError:
+                print('\033[31mErro no tipo de informação inserida. Lembre-se somente do tipo string\033[m')
+
+            else:
+                print('\033[34mOk! Foi adicionado o valor.\033[m')
+                break
+
+        #Ponto D, coordenada x
+        while True:
+
+            try:
+                ponto4x = float(input("Valor da coordenada x do ponto D: "))
+
+            except ValueError:
+                print('\033[31mErro no tipo de informação inserida. Lembre-se somente do tipo float\033[m')
+
+            except TypeError:
+                print('\033[31mErro no tipo de informação inserida. Lembre-se somente do tipo float\033[m')
+            else:
+                print('\033[34mOk! Foi adicionado o valor.\033[m')
+                break
+
+        #Ponto D, coordenada y
+        while True:
+
+            try:
+                ponto4y = float(input("valor da coordenada y do ponto D: "))
+
+            except ValueError:
+                print('\033[31mErro no tipo de informação inserida. Lembre-se somente do tipo float\033[m')
+
+            except TypeError:
+                print('\033[31mErro no tipo de informação inserida. Lembre-se somente do tipo float\033[m')
+
+            else:
+                print('\033[34mOk! Foi adicionado o valor.\033[m')
+                break
+
+        #Cor do ponto D
+        while True:
+
+            try:
+                cor4 = str(input("Cor em inglês do ponto D: "))
+
+            except ValueError:
+                print('\033[31mErro no tipo de informação inserida. Lembre-se somente do tipo float\033[m')
+
+            except TypeError:
+                print('\033[31mErro no tipo de informação inserida. Lembre-se somente do tipo float\033[m')
+
+            else:
+                print('\033[34mOk! Foi adicionado o valor.\033[m')
+                break
+
+        #Junção das informações em respectivas linhas
+        primeira_linha = (str(coordx) + ' ' + str(coordy))
+        quarta_linha   = (str(ponto1x) + ' ' + str(ponto1y) + ' ' + str(cor1) + ' ')
+        quinta_linha   = (str(ponto2x) + ' ' + str(ponto2y) + ' ' + str(cor2) + ' ')
+        sexta_linha    = (str(ponto3x) + ' ' + str(ponto3y) + ' ' + str(cor3) + ' ')
+        setima_linha   = (str(ponto4x) + ' ' + str(ponto4y) + ' ' + str(cor4) + ' ')
+
+        #Comando para escrever dentro do arquivo
         f.write(primeira_linha + '\n')
-        f.write(cateto1 + '\n')
-        f.write(cateto2 + '\n')
+        f.write(str(cateto1) + '\n')
+        f.write(str(cateto2) + '\n')
         f.write(quarta_linha + '\n')
         f.write(quinta_linha + '\n')
         f.write(sexta_linha + '\n')
@@ -106,19 +340,22 @@ def desenhar_triangulo(matriz_triangular,matriz_ponto1,matriz_ponto2,matriz_pont
     #Diferença para saber o angulo externo
     angulo = 180 - angulo_alfa
 
-    # Primeira Condicional para determinar para que lado é a hipotenusa
+    #Rotaciona a tartaruga para fechar o triangulo retangulo
+    turtle.left(angulo)
+
+    #1: Se o triângulo estiver no primeiro quadrante do plano cartesiano, então:
     if x < cateto1 and y < cateto2:
         turtle.left(angulo)
 
-    # Segunda Condicional para determinar para que lado é a hipotenusa
+    #2: Se o triângulo estiver no quarto quadrante do plano cartesiano, então:
     elif x < cateto1 and y > cateto2:
         turtle.left(angulo_alfa)
 
-    # Terceira Condicional para determinar para que lado é a hipotenusa
+    #3: Se o triângulo estiver no quarto segundo quadrante do plano cartesiano, então:
     elif x > cateto1 and y < cateto2:
         turtle.right(angulo)
 
-    # Quarta Condicional para determinar para que lado é a hipotenusa
+    #4: Se o triângulo estiver no quarto terceiro quadrante do plano cartesiano, então:
     elif x > cateto1 and y > cateto2:
         turtle.left(angulo_alfa)
 
@@ -128,6 +365,7 @@ def desenhar_triangulo(matriz_triangular,matriz_ponto1,matriz_ponto2,matriz_pont
     #Armazena a posição da tartaruga na variavel
     posfinal = turtle.pos()
 
+    #Condicional para saber se o triangulo foi formado ou não.
     if posfinal == posinicial:
         print("Triangulo Retângulo formado! Cateto oposto {}, cateto adjacente {}, hipotenusa {} e angulo {}".
               format(cateto1,cateto2,hipotenusa,angulo_alfa))
@@ -194,27 +432,27 @@ def desenhar_triangulo(matriz_triangular,matriz_ponto1,matriz_ponto2,matriz_pont
     turtle.pendown()
     turtle.dot(30)
 
-
+    #Comando que exige que o usuário clique no visor para sair da tela
     turtle.exitonclick()
 
 
-def separador_de_str_2elementos(linha):
+def separador_de_str_2elementos(l):
 
     # Separa o conteúdo da primeira linha no espaço
-    separador = linha.split(' ')
+    separador = l.split(' ')
 
     primeira_parte = float(separador[0])
     segunda_parte = float(separador[1])
 
-    ma = np.array([primeira_parte,segunda_parte])
+    ma = np.array([primeira_parte, segunda_parte])
 
     return ma
 
 
-def separador_de_str_3elementos(linha):
+def separador_de_str_3elementos(l):
 
     # Separa o conteúdo da primeira linha no espaço
-    separador = linha.split(' ')
+    separador = l.split(' ')
 
     primeira_parte = float(separador[0])
     segunda_parte = float(separador[1])
@@ -226,6 +464,9 @@ def separador_de_str_3elementos(linha):
 
 
 def ler_arquivo_txt(arquivo):
+
+    #Declara estas variaveis como globais.
+    global m_t, m_p1, m_p2, m_p3, m_p4
 
     with open(arquivo, 'r') as f:
 
@@ -244,58 +485,55 @@ def ler_arquivo_txt(arquivo):
         # terceira linha do arquivo
         cateto2 = float(f.readline())
 
-        #Função para desenhar o triangulo com o .Turtle()
-        #desenhar_triangulo(x,y,cateto1,cateto2)
-
         # quarta linha do arquivo
-        linha = str(f.readline())
+        linha   = str(f.readline())
 
-        matriz = separador_de_str_3elementos(linha)
+        matriz  = separador_de_str_3elementos(linha)
 
         ponto1x = float(matriz[0])
         ponto1y = float(matriz[1])
 
-        cor1 = str(matriz[2])
+        cor1    = str(matriz[2])
 
         # quinta linha do arquivo
-        linha = str(f.readline())
+        linha   = str(f.readline())
 
-        matriz = separador_de_str_3elementos(linha)
+        matriz  = separador_de_str_3elementos(linha)
 
         ponto2x = float(matriz[0])
         ponto2y = float(matriz[1])
 
-        cor2 = str(matriz[2])
+        cor2    = str(matriz[2])
 
         # sexta linha do arquivo
-        linha = str(f.readline())
+        linha   = str(f.readline())
 
-        matriz = separador_de_str_3elementos(linha)
+        matriz  = separador_de_str_3elementos(linha)
 
         ponto3x = float(matriz[0])
         ponto3y = float(matriz[1])
 
-        cor3 = str(matriz[2])
+        cor3    = str(matriz[2])
 
         # sétima linha do arquivo
-        linha = str(f.readline())
+        linha   = str(f.readline())
 
-        matriz = separador_de_str_3elementos(linha)
+        matriz  = separador_de_str_3elementos(linha)
 
         ponto4x = float(matriz[0])
         ponto4y = float(matriz[1])
 
-        cor4 = str(matriz[2])
+        cor4    = str(matriz[2])
 
         #Criando array's para as coordenadas
-        matriz_triangular = np.array([x,y,cateto1,cateto2])
-        matriz_ponto1 = np.array([ponto1x,ponto1y,cor1])
-        matriz_ponto2 = np.array([ponto2x,ponto2y,cor2])
-        matriz_ponto3 = np.array([ponto3x,ponto3y,cor3])
-        matriz_ponto4 = np.array([ponto4x,ponto4y,cor4])
+        m_t      = np.array([x, y, cateto1, cateto2])
+        m_p1     = np.array([ponto1x, ponto1y, cor1])
+        m_p2     = np.array([ponto2x, ponto2y, cor2])
+        m_p3     = np.array([ponto3x, ponto3y, cor3])
+        m_p4     = np.array([ponto4x, ponto4y, cor4])
 
         #Chama função para calular o ponto médio entre os pontos no plano cartesiano
-        desenhar_triangulo(matriz_triangular,matriz_ponto1,matriz_ponto2,matriz_ponto3,matriz_ponto4)
+        desenhar_triangulo(m_t, m_p1, m_p2, m_p3, m_p4)
 
 
 
